@@ -1,0 +1,53 @@
+{
+  "execution": "Python reference, NOT MATLAB execution",
+  "period_min": 96.5389018265515,
+  "checks": [
+    "Circular radius and period closure",
+    "Overhead, occultation and high-latitude exclusion",
+    "Exact capacity, missed contact and no fragmented transfer",
+    "Both layouts: 10 s versus 2 s windows agree within 2 ms",
+    "Finite summary transmissions fit the observing spacecraft contacts"
+  ],
+  "results": [
+    {
+      "layout": 1,
+      "target": "Belfast",
+      "windows": 11,
+      "events": 11,
+      "coverage_min": 26.117970784505207,
+      "raw_within_20min": 1.0,
+      "summary_within_20min": 1.0,
+      "median_delivered_latency_min": 1.0444444444444647
+    },
+    {
+      "layout": 1,
+      "target": "Singapore",
+      "windows": 4,
+      "events": 4,
+      "coverage_min": 8.738067626953125,
+      "raw_within_20min": 0.0,
+      "summary_within_20min": 0.0,
+      "median_delivered_latency_min": 68.33477851019967
+    },
+    {
+      "layout": 2,
+      "target": "Belfast",
+      "windows": 12,
+      "events": 12,
+      "coverage_min": 27.241465250651043,
+      "raw_within_20min": 1.0,
+      "summary_within_20min": 1.0,
+      "median_delivered_latency_min": 1.0444444444444192
+    },
+    {
+      "layout": 2,
+      "target": "Singapore",
+      "windows": 4,
+      "events": 4,
+      "coverage_min": 9.340321858723959,
+      "raw_within_20min": 0.0,
+      "summary_within_20min": 0.0,
+      "median_delivered_latency_min": 68.29474199083116
+    }
+  ]
+}

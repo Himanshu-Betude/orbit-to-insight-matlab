@@ -1,0 +1,10 @@
+.DS_Store
+*.asv
+*.m~
+results/*
+!results/.gitkeep
+verification_artifacts/
+*.log
+.env
+.env.*
+__pycache__/

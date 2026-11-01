@@ -1,0 +1,28 @@
+name: MATLAB verification
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-and-study:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: matlab-actions/setup-matlab@f9e43010f1ae678f7cfa0542fe2a4f60f7d1ad8d # v3
+        with:
+          release: R2024b
+      - name: Run numerical tests and full study
+        uses: matlab-actions/run-command@bfa857648f4895aa98a446fe41c85e0788421ed5 # v3
+        with:
+          command: mkdir('verification_artifacts'); diary('verification_artifacts/matlab.txt'); results = runtests('tests'); disp(results); assertSuccess(results); run_study('verification_artifacts'); diary off
+      - name: Save results and figures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: matlab-verification
+          path: verification_artifacts/
+          if-no-files-found: warn
