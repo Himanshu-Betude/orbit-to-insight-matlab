@@ -1,0 +1,9 @@
+{
+  "MATLAB": "24.2.0.3361896 (R2024b) Update 10",
+  "generatedUTC": "01-Nov-2026 21:45:20",
+  "seed": 307,
+  "model": "Circular two-body, spherical rotating Earth",
+  "sample_s": 10,
+  "refinedSample_s": 2,
+  "duration_s": 86400
+}
