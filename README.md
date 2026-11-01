@@ -9,6 +9,10 @@ Four satellites can be evenly spaced in an orbit without providing evenly spaced
 
 Project owner: **Himanshu Betude**, Aerospace Engineering, Queen's University Belfast.
 
+![MATLAB orbital access and data delivery results](docs/example_results/overview.png)
+
+**Verified in MATLAB R2024b: 13 tests passed, and the full study completed.** [View the run](https://github.com/Himanshu-Betude/orbit-to-insight-matlab/actions/runs/41353362334).
+
 ## What it does
 
 - Compares four spacecraft in one orbital plane with four spacecraft in two planes.
@@ -64,6 +68,8 @@ Change the mission assumptions in [`+mission/defaultConfig.m`](+mission/defaultC
 The layout comparison changes both orbital plane allocation and phase distribution. It is a comparison of two specified designs, not an optimisation or proof that one plane count is universally better.
 
 ## Read the outputs
+
+The [saved example results](docs/example_results) come from the passing MATLAB run. They include the exact source commit and run metadata. In this scenario, the two-plane design provides 12 Belfast access windows versus 11 for one plane. Singapore has four windows in either case, and its median delivered summary latency remains about 68 minutes because the ground station is in Belfast. Extra orbital planes do not automatically solve data-delivery delay.
 
 | File | Meaning |
 |---|---|

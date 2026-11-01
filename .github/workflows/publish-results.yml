@@ -1,0 +1,45 @@
+name: Publish verified example figures
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful MATLAB verification run ID
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Check that verification succeeded
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERIFY_RUN: ${{ inputs.run_id }}
+        run: |
+          [[ "$VERIFY_RUN" =~ ^[0-9]+$ ]]
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$VERIFY_RUN" --jq .conclusion)" = success
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$VERIFY_RUN" --jq .name)" = 'MATLAB verification'
+          mkdir -p docs/example_results
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$VERIFY_RUN" --jq '{run: .html_url, sourceCommit: .head_sha, conclusion: .conclusion}' > docs/example_results/provenance.json
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: matlab-verification
+          path: downloaded-results
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Publish selected figures and numeric results
+        run: |
+          for file in overview.png ground_tracks.png comparison.csv convergence.csv sensitivity.csv run_metadata.json events_layout_1.csv events_layout_2.csv; do
+            cp "downloaded-results/$file" "docs/example_results/$file"
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/example_results
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh figures from successful MATLAB verification [skip ci]'
+            git push
+          fi

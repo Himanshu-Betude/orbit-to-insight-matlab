@@ -1,6 +1,13 @@
 # Verification status
 
-MATLAB execution is pending. On 1 November 2026 the installed R2024b application on the development Mac failed before running project code, with `MessageCatalogIncorrectRoot`. Its application resource directory is absent. Expected results are not labelled as MATLAB test passes.
+**MATLAB verification passed on 1 November 2026: 13 passed, 0 failed, 0 incomplete.** The full study also completed and generated figures, CSV tables and run metadata.
+
+- MATLAB R2024b on a GitHub-hosted Ubuntu 22.04 runner.
+- Verified source: `13cf321ae615c4dd598ff7434438f48701f4e394`.
+- [Execution log and downloadable artifacts](https://github.com/Himanshu-Betude/orbit-to-insight-matlab/actions/runs/41353362334).
+- [Selected generated results](example_results), including run/source provenance.
+
+The installed MATLAB application on the development Mac could not start because its resource directory is missing; no local MATLAB execution is claimed. The initial cloud run found a missing test-path setup, which was corrected before this successful run. Interactive animation has not been manually checked; the study's static 3D plots were generated in MATLAB.
 
 The repository contains 13 MATLAB tests covering:
 
@@ -18,7 +25,7 @@ The repository contains 13 MATLAB tests covering:
 12. Access sampling refined from 10 to 2 seconds.
 13. Repeatable seeded sensitivity trials.
 
-The automated workflow must pass on the published commit before this project is described as MATLAB-verified.
+The 10-second and 2-second access scans found identical window counts. Total access-duration differences were at most 0.00135 seconds for these four layout/target combinations. This checks numerical resolution for this scenario; it does not establish physical accuracy or rule out missed short passes in other configurations.
 
 ## Reference calculation completed
 
