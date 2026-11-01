@@ -2,6 +2,9 @@
 
 **A MATLAB study of satellite access, constellation layout and time to usable information.**
 
+[![MATLAB verification](https://github.com/Himanshu-Betude/orbit-to-insight-matlab/actions/workflows/matlab.yml/badge.svg)](https://github.com/Himanshu-Betude/orbit-to-insight-matlab/actions/workflows/matlab.yml)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=Himanshu-Betude/orbit-to-insight-matlab&file=run_study.m)
+
 Four satellites can be evenly spaced in an orbit without providing evenly spaced observations of a ground target. An observation also has to wait for a usable downlink. This project connects those two problems in one reproducible model.
 
 Project owner: **Himanshu Betude**, Aerospace Engineering, Queen's University Belfast.

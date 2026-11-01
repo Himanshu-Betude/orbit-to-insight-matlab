@@ -2,6 +2,11 @@ function tests=test_mission
 tests=functiontests(localfunctions);
 end
 
+function setupOnce(testCase)
+root=fileparts(fileparts(mfilename('fullpath')));
+testCase.applyFixture(matlab.unittest.fixtures.PathFixture(root));
+end
+
 function testCircularStateConservation(testCase)
 c=mission.defaultConfig(); a=c.radius_km+c.altitude_km;
 T=2*pi*sqrt(a^3/c.mu_km3_s2);

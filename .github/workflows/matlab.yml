@@ -18,7 +18,7 @@ jobs:
       - name: Run numerical tests and full study
         uses: matlab-actions/run-command@bfa857648f4895aa98a446fe41c85e0788421ed5 # v3
         with:
-          command: mkdir('verification_artifacts'); diary('verification_artifacts/matlab.txt'); results = runtests('tests'); disp(results); assertSuccess(results); run_study('verification_artifacts'); diary off
+          command: addpath(pwd); mkdir('verification_artifacts'); diary('verification_artifacts/matlab.txt'); results = runtests('tests'); disp(results); assertSuccess(results); run_study('verification_artifacts'); diary off
       - name: Save results and figures
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
