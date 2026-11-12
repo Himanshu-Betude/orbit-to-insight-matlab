@@ -7,7 +7,7 @@
 - [Execution log and downloadable artifacts](https://github.com/Himanshu-Betude/orbit-to-insight-matlab/actions/runs/41353362334).
 - [Selected generated results](example_results), including run/source provenance.
 
-The installed MATLAB application on the development Mac could not start because its resource directory is missing; no local MATLAB execution is claimed. The initial cloud run found a missing test-path setup, which was corrected before this successful run. Interactive animation has not been manually checked; the study's static 3D plots were generated in MATLAB.
+All verification ran in GitHub Actions on MATLAB R2024b. Interactive animation has not been manually checked; the study's static 3D plots were generated in MATLAB.
 
 The repository contains 13 MATLAB tests covering:
 
