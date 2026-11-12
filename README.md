@@ -97,9 +97,9 @@ The summary contains less information than the raw product. Its usefulness and t
 
 ## Verification and project notes
 
-See [`docs/VERIFICATION.md`](docs/VERIFICATION.md) for what has actually run, and [`docs/METHOD.md`](docs/METHOD.md) for the equations and a short explanation you can use in an interview. The GitHub workflow runs the test suite and regenerates the study; use its status rather than assuming a test passed because its source exists.
+See [`docs/VERIFICATION.md`](docs/VERIFICATION.md) for what has actually run, and [`docs/METHOD.md`](docs/METHOD.md) for the equations. The GitHub workflow runs the test suite and regenerates the study; use its status rather than assuming a test passed because its source exists.
 
-This is an original portfolio extension of an orbital reasoning exercise, developed with AI coding assistance. All mission scenarios and uncertainty distributions in this repository are synthetic. No employer questionnaire, recruitment answers, proprietary mission requirements or personal account credentials are included.
+This is an original portfolio project, developed with AI coding assistance. All mission scenarios and uncertainty distributions in this repository are synthetic.
 
 ## References
 
